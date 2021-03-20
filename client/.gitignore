@@ -1,0 +1,13 @@
+# Packages
+node_modules
+
+# Parcel
+.cache
+dist
+dist_prod
+
+# VS Code
+.vscode
+
+# Yarn
+yarn-error.log

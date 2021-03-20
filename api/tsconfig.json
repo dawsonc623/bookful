@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ES5",
+      "ES2015.Collection"
+    ],
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "strict": true
+  },
+  "include": [
+    "./src/**/*.ts"
+  ]
+}
