@@ -1,0 +1,20 @@
+{
+  "name": "@bookful/data",
+  "version": "0.1.0",
+  "description": "Data model for an advisor booking app.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/dawsonc623/bookful",
+  "author": "Cyle Ven Dawson <dawsonc623@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-import": "^2.22.1",
+    "typescript": "^4.2.3"
+  }
+}
