@@ -12,6 +12,7 @@
     "dev": "parcel -p 8080 src/ui/index.html"
   },
   "dependencies": {
+    "@bookful/data": "^0.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

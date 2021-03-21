@@ -4,8 +4,12 @@ import React, {
 
 import ReactDOM from "react-dom";
 
+import {
+  BookAdvisorView
+} from "./views/book_advisor";
+
 function Bookful()  : ReactElement {
-  return <p>Hello, world!</p>;
+  return <BookAdvisorView />;
 }
 
 ReactDOM.render(
