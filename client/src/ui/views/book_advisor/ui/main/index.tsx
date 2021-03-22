@@ -7,6 +7,7 @@ import React, {
 } from "react";
 
 import AdvisorAvailabilityRepository  from "../../../../../lib/advisor_availability_repository/index.type";
+import AdvisorBookingRepository       from "../../../../../lib/advisor_booking_repository/index.type";
 import AdvisorService                 from "../../../../../lib/advisor_service/index.type";
 
 import "./index.scss";
@@ -29,7 +30,7 @@ export default function BookAdvisorViewMain(
   const currentDate       = new Date();
   const currentDateString = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
 
-  // Fetch the advisor data
+  // Fetch the advisor  availability data
 
   const [
     advisorAvailabilityRepository,
@@ -47,6 +48,38 @@ export default function BookAdvisorViewMain(
           if (!unmounted) {
             setAdvisorAvailabilityRepository(
               newAdvisorAvailabilityRepository
+            );
+          }
+        }
+      );
+
+      return () => {
+        unmounted = true;
+      };
+    },
+    [
+      advisorService
+    ]
+  );
+
+  // Grab the advisor booking data
+
+  const [
+    advisorBookingRepository,
+    setAdvisorBookingRepository
+  ] = useState<AdvisorBookingRepository>();
+
+  useEffect(
+    () => {
+      let unmounted = false;
+
+      advisorService.getBookingsForAll().then(
+        (
+          newAdvisorBookingRepository
+        ) => {
+          if (!unmounted) {
+            setAdvisorBookingRepository(
+              newAdvisorBookingRepository
             );
           }
         }
@@ -91,7 +124,7 @@ export default function BookAdvisorViewMain(
       <hr />
       <input
         onChange    = {updateBookingStudentName}
-        placeholder = "Name"
+        placeholder = "Your Name"
         type        = "text"
         value       = {bookingStudentName}
       />
@@ -101,6 +134,13 @@ export default function BookAdvisorViewMain(
           <p>Loading...</p>
           :
           <table>
+            <thead>
+              <tr>
+                <th>Advisor ID</th>
+                <th>Availabilities</th>
+                <th></th>
+              </tr>
+            </thead>
             <tbody>
               {
                 advisorAvailabilityRepository.getAllAdvisorAvailability().map(
@@ -151,6 +191,52 @@ export default function BookAdvisorViewMain(
                           )
                         }
                       </React.Fragment>
+                    );
+                  }
+                )
+              }
+            </tbody>
+          </table>
+      }
+      <h2>Booked Times</h2>
+      <hr />
+      {
+        !advisorBookingRepository ?
+          <p>Loading...</p>
+          :
+          <table>
+            <thead>
+              <tr>
+                <th>Advisor ID</th>
+                <th>Student Name</th>
+                <th>Date/Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                advisorBookingRepository.getAllAdvisorBookings().map(
+                  (
+                    booking
+                  ) => {
+                    const advisorId = booking.getAdvisorId();
+
+                    const date    = booking.getDate();
+                    const hours   = date.getHours();
+                    const minutes = date.getMinutes();
+
+                    const period  = hours > 11 ? "PM" : "AM";
+
+                    const dateString  = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ` +
+                      `${(hours % 12) + 1}:${minutes > 9 ? minutes : `0${minutes}`} ${period}`;
+
+                    return (
+                      <tr
+                        key = {`${advisorId}@${dateString}`}
+                      >
+                        <td>{advisorId}</td>
+                        <td>{booking.getStudentName()}</td>
+                        <td>{dateString}</td>
+                      </tr>
                     );
                   }
                 )
