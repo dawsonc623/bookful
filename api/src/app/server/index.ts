@@ -1,6 +1,11 @@
 import bodyParser from "body-parser";
 import cors       from "cors";
-import express    from "express";
+
+import express, {
+  RequestHandler
+} from "express";
+
+import Responder from "../../lib/responder/index.type";
 
 import getAllAdvisorAvailability  from "../get_all_advisor_availability";
 import getAllBookings             from "../get_all_bookings";
@@ -10,14 +15,24 @@ const server = express();
 server.use(cors());
 server.use(bodyParser.json());
 
+function createHandlerFromResponder(
+  responder : Responder
+) : RequestHandler {
+  return responder.respond.bind(responder);
+}
+
 server.get(
   "/advisor/availability",
-  getAllAdvisorAvailability.respond.bind(getAllAdvisorAvailability)
+  createHandlerFromResponder(
+    getAllAdvisorAvailability
+  )
 );
 
 server.get(
   "/advisor/booking",
-  getAllBookings.respond.bind(getAllBookings)
+  createHandlerFromResponder(
+    getAllBookings
+  )
 );
 
 export default server;
