@@ -20,6 +20,22 @@ class StandardAdvisorAvailabilityRepository implements AdvisorAvailabilityReposi
 
     return this.advisorAvailability;
   }
+
+  public async removeAvailability(
+    advisorId : number,
+    date      : Date
+  ) : Promise<boolean> {
+    if (!this.advisorAvailability) {
+      this.advisorAvailability = this.dataSource.getAllAdvisorAvailability();
+    }
+
+    const allAdvisorAvailability = await this.advisorAvailability;
+
+    return allAdvisorAvailability.removeAvailability(
+      advisorId,
+      date
+    );
+  }
 }
 
 export default StandardAdvisorAvailabilityRepository;

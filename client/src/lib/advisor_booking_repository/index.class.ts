@@ -18,6 +18,37 @@ class StandardAdvisorBookingRepository implements AdvisorBookingRepository
 
   }
 
+  public addBooking(
+    advisorId   : number,
+    date        : Date,
+    studentName : string
+  )  : Promise<void> {
+    return window.fetch(
+      `${this.apiOrigin}advisor/booking`,
+      {
+        "headers" : new Headers({
+          "Content-Type": "application/json"
+        }),
+        "method"  : "POST",
+
+        "body"    : JSON.stringify({
+          advisorId,
+          studentName,
+
+          "date"  : date.toISOString()
+        })
+      }
+    ).then(
+      (
+        response
+      ) => {
+        if (!response.ok) {
+          throw new Error("Could not add new booking.");
+        }
+      }
+    );
+  }
+
   public getAllAdvisorBookings() : Promise<AdvisorBookingCollection> {
     return window.fetch(
       `${this.apiOrigin}advisor/booking`
@@ -25,6 +56,10 @@ class StandardAdvisorBookingRepository implements AdvisorBookingRepository
       (
         response
       ) => {
+        if (!response.ok) {
+          throw new Error("Could not get all bookings.");
+        }
+
         return response.json();
       }
     ).then(

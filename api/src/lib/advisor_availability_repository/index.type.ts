@@ -3,6 +3,11 @@ import AdvisorAvailabilityCollection from "../advisor_availability_collection/in
 interface AdvisorAvailabilityRepository
 {
   getAllAdvisorAvailability() : Promise<AdvisorAvailabilityCollection>;
+
+  removeAvailability(
+    advisorId : number,
+    date      : Date
+  ) : Promise<boolean>;
 }
 
 export default AdvisorAvailabilityRepository;

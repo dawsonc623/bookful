@@ -14,6 +14,18 @@ class StandardAdvisorService implements AdvisorService
 
   }
 
+  public bookAdvisor(
+    advisorId   : number,
+    date        : Date,
+    studentName : string
+  ) : Promise<void> {
+    return this.advisorBookingRepository.addBooking(
+      advisorId,
+      date,
+      studentName
+    );
+  }
+
   public getAllAdvisorAvailability() : Promise<AdvisorAvailabilityCollection> {
     return this.advisorAvailabilityRepository.getAllAdvisorAvailability();
   }

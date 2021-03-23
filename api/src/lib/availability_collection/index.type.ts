@@ -9,6 +9,10 @@ interface AvailabilityCollection
       availability  : Availability
     ) => T
   ) : T[];
+
+  removeDate(
+    date  : Date
+  ) : boolean;
 }
 
 export default AvailabilityCollection;

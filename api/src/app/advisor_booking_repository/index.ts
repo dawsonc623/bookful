@@ -1,8 +1,10 @@
 import advisorBookingRepositoryFactory from "./factory";
 
-import dataSource from "../data_source";
+import advisorBookingFactory  from "../advisor_booking/factory";
+import dataSource             from "../data_source";
 
 const advisorBookingRepository  = advisorBookingRepositoryFactory.construct(
+  advisorBookingFactory,
   dataSource
 );
 

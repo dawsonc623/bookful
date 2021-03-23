@@ -3,9 +3,15 @@ import AdvisorBookingCollection       from "../advisor_booking_collection/index.
 
 interface AdvisorService
 {
+  bookAdvisor(
+    advisorId   : number,
+    date        : Date,
+    studentName : string
+  ) : Promise<void>;
+
   getAllAdvisorAvailability() : Promise<AdvisorAvailabilityCollection>;
 
-  getAllAdvisorBookings() : Promise<AdvisorBookingCollection>
+  getAllAdvisorBookings() : Promise<AdvisorBookingCollection>;
 }
 
 export default AdvisorService;

@@ -7,6 +7,7 @@ import express, {
 
 import Responder from "../../lib/responder/index.type";
 
+import addBooking                 from "../add_booking";
 import getAllAdvisorAvailability  from "../get_all_advisor_availability";
 import getAllBookings             from "../get_all_bookings";
 
@@ -32,6 +33,13 @@ server.get(
   "/advisor/booking",
   createHandlerFromResponder(
     getAllBookings
+  )
+);
+
+server.post(
+  "/advisor/booking",
+  createHandlerFromResponder(
+    addBooking
   )
 );
 

@@ -23,6 +23,31 @@ class StandardAvailabilityCollection implements AvailabilityCollection
       mapper
     );
   }
+
+  public removeDate(
+    date  : Date
+  ) : boolean {
+    let found = false;
+
+    const availabilityIndex = this.availabilities.findIndex(
+      (
+        advisorAvailability
+      ) => {
+        return advisorAvailability.getDate().getTime() === date.getTime();
+      }
+    );
+
+    if (availabilityIndex > -1) {
+      found = true;
+
+      this.availabilities.splice(
+        availabilityIndex,
+        1
+      );
+    }
+
+    return found;
+  }
 }
 
 export default StandardAvailabilityCollection;

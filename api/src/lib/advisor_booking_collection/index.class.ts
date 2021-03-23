@@ -10,6 +10,14 @@ class StandardAdvisorBookingRepository implements AdvisorBookingRepository
 
   }
 
+  public add(
+    booking : AdvisorBooking
+  ) : void {
+    this.advisorBookings.push(
+      booking
+    );
+  }
+
   public map<T>(
     mapper  : (
       booking : AdvisorBooking

@@ -7,6 +7,11 @@ interface AdvisorAvailabilityCollection
       advisorAvailability : AdvisorAvailability
     ) => T
   ) : T[];
+
+  removeAvailability(
+    advisorId : number,
+    date      : Date
+  ) : boolean;
 }
 
 export default AdvisorAvailabilityCollection;

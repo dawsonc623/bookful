@@ -25,12 +25,20 @@ export default function BookAdvisorViewMain(
     advisorService
   } = props;
 
+  // Trigger to refresh lists
+  const [
+    refresh,
+    setRefresh
+  ] = useState(
+    true
+  );
+
   // Grab and format the current date to show to the student
 
   const currentDate       = new Date();
   const currentDateString = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
 
-  // Fetch the advisor  availability data
+  // Fetch the advisor availability data
 
   const [
     advisorAvailability,
@@ -58,7 +66,8 @@ export default function BookAdvisorViewMain(
       };
     },
     [
-      advisorService
+      advisorService,
+      refresh
     ]
   );
 
@@ -90,7 +99,8 @@ export default function BookAdvisorViewMain(
       };
     },
     [
-      advisorService
+      advisorService,
+      refresh
     ]
   );
 
@@ -112,6 +122,28 @@ export default function BookAdvisorViewMain(
     },
     []
   );
+
+  // Create a new booking
+
+  const bookAdvisor = async (
+    advisorId : number,
+    date      : Date
+  ) => {
+    try {
+      await advisorService.bookAdvisor(
+        advisorId,
+        date,
+        bookingStudentName
+      );
+
+      setRefresh(
+        (r) => !r
+      );
+    } catch (e) {
+      // TODO Alert the user of error
+      e;
+    }
+  };
 
   return (
     <div
@@ -173,7 +205,7 @@ export default function BookAdvisorViewMain(
                               const period  = hours > 11 ? "PM" : "AM";
 
                               const dateString  = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ` +
-                                `${(hours % 12) + 1}:${minutes > 9 ? minutes : `0${minutes}`} ${period}`;
+                                `${(hours % 12 || 12)}:${minutes > 9 ? minutes : `0${minutes}`} ${period}`;
 
                               return (
                                 <tr
@@ -181,7 +213,9 @@ export default function BookAdvisorViewMain(
                                 >
                                   <td>{dateString}</td>
                                   <td>
-                                    <button>
+                                    <button
+                                      onClick = {() => bookAdvisor(advisorId, date)}
+                                    >
                                       Book
                                     </button>
                                   </td>
@@ -227,7 +261,7 @@ export default function BookAdvisorViewMain(
                     const period  = hours > 11 ? "PM" : "AM";
 
                     const dateString  = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ` +
-                      `${(hours % 12) + 1}:${minutes > 9 ? minutes : `0${minutes}`} ${period}`;
+                      `${(hours % 12 || 12)}:${minutes > 9 ? minutes : `0${minutes}`} ${period}`;
 
                     return (
                       <tr
