@@ -1,1 +1,3 @@
-process.stdout.write("Hello, World!\n");
+import server from "./app/server";
+
+server.listen(3000);

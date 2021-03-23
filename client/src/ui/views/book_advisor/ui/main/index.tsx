@@ -7,7 +7,7 @@ import React, {
 } from "react";
 
 import AdvisorAvailabilityRepository  from "../../../../../lib/advisor_availability_repository/index.type";
-import AdvisorBookingRepository       from "../../../../../lib/advisor_booking_repository/index.type";
+import AdvisorBookingCollection       from "../../../../../lib/advisor_booking_collection/index.type";
 import AdvisorService                 from "../../../../../lib/advisor_service/index.type";
 
 import "./index.scss";
@@ -65,21 +65,21 @@ export default function BookAdvisorViewMain(
   // Grab the advisor booking data
 
   const [
-    advisorBookingRepository,
-    setAdvisorBookingRepository
-  ] = useState<AdvisorBookingRepository>();
+    advisorBookings,
+    setAdvisorBookings
+  ] = useState<AdvisorBookingCollection>();
 
   useEffect(
     () => {
       let unmounted = false;
 
-      advisorService.getBookingsForAll().then(
+      advisorService.getAllAdvisorBookings().then(
         (
-          newAdvisorBookingRepository
+          newAdvisorBookings
         ) => {
           if (!unmounted) {
-            setAdvisorBookingRepository(
-              newAdvisorBookingRepository
+            setAdvisorBookings(
+              newAdvisorBookings
             );
           }
         }
@@ -201,7 +201,7 @@ export default function BookAdvisorViewMain(
       <h2>Booked Times</h2>
       <hr />
       {
-        !advisorBookingRepository ?
+        !advisorBookings ?
           <p>Loading...</p>
           :
           <table>
@@ -214,7 +214,7 @@ export default function BookAdvisorViewMain(
             </thead>
             <tbody>
               {
-                advisorBookingRepository.getAllAdvisorBookings().map(
+                advisorBookings.map(
                   (
                     booking
                   ) => {
