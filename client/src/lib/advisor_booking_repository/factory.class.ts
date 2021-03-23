@@ -9,12 +9,15 @@ class StandardAdvisorBookingRepositoryFactory implements AdvisorBookingRepositor
 {
   public construct(
     advisorBookingCollectionFactory : AdvisorBookingCollectionFactory,
-    advisorBookingFactory           : AdvisorBookingFactory
+    advisorBookingFactory           : AdvisorBookingFactory,
+    apiOrigin                       : string
+
   ) : AdvisorBookingRepository
   {
     return new StandardAdvisorBookingRepository(
       advisorBookingCollectionFactory,
-      advisorBookingFactory
+      advisorBookingFactory,
+      apiOrigin
     );
   }
 }

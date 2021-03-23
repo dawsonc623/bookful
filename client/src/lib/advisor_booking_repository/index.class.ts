@@ -12,21 +12,20 @@ class StandardAdvisorBookingRepository implements AdvisorBookingRepository
 {
   public constructor(
     private advisorBookingCollectionFactory : AdvisorBookingCollectionFactory,
-    private advisorBookingFactory           : AdvisorBookingFactory
+    private advisorBookingFactory           : AdvisorBookingFactory,
+    private apiOrigin                       : string
   ) {
 
   }
 
   public getAllAdvisorBookings() : Promise<AdvisorBookingCollection> {
-    return Promise.resolve(
-      {
-        "bookings"  : [
-          {
-            "advisorId"   : 3456,
-            "date"        : "2021-03-22T11:00:00.000Z",
-            "studentName" : "John Smith"
-          }
-        ]
+    return window.fetch(
+      `${this.apiOrigin}advisor/booking`
+    ).then(
+      (
+        response
+      ) => {
+        return response.json();
       }
     ).then(
       (

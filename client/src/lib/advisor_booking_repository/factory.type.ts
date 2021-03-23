@@ -7,7 +7,8 @@ interface AdvisorBookingRepositoryFactory
 {
   construct(
     advisorBookingCollectionFactory : AdvisorBookingCollectionFactory,
-    advisorBookingFactory           : AdvisorBookingFactory
+    advisorBookingFactory           : AdvisorBookingFactory,
+    apiOrigin                       : string
   ) : AdvisorBookingRepository;
 }
 
