@@ -9,37 +9,42 @@ import {
   Response
 } from "express";
 
+import AdvisorAvailabilityRepository from "../advisor_availability_repository/index.type";
+
 class GetAllAdvisorAvailability implements Responder
 {
-  public respond(
+  public constructor(
+    private advisorAvailabilityRepository : AdvisorAvailabilityRepository
+  ) {
+
+  }
+
+  public async respond(
     _request  : Request,
     response  : Response<AdvisorAvailabilityResponse>
-  ) : void {
+  ) : Promise<void> {
+    const advisorAvailabilities = await this.advisorAvailabilityRepository.getAllAdvisorAvailability();
+
     response.send({
-      "advisorAvailabilities" : [
-        {
-          "advisorId" : 1234,
-          "availabilities"  : [
-            {
-              "date"  : "2021-03-21T22:30:00.000Z"
-            },
-            {
-              "date"  : "2021-03-22T14:00:00.000Z"
-            }
-          ]
-        },
-        {
-          "advisorId" : 2345,
-          "availabilities"  : [
-            {
-              "date"  : "2021-03-22T00:00:00.000Z"
-            },
-            {
-              "date"  : "2021-04-23T18:30:00.000Z"
-            }
-          ]
+      "advisorAvailabilities" : advisorAvailabilities.map(
+        (
+          advisorAvailability
+        ) => {
+          return {
+            "advisorId" : advisorAvailability.getAdvisorId(),
+
+            "availabilities"  : advisorAvailability.getAllAvailability().map(
+              (
+                availability
+              ) => {
+                return {
+                  "date"  : availability.getDate().toISOString()
+                };
+              }
+            )
+          };
         }
-      ]
+      )
     });
   }
 }
