@@ -9,20 +9,34 @@ import {
   Response
 } from "express";
 
+import AdvisorBookingRepository from "../advisor_booking_repository/index.type";
+
 class GetAllBookings implements Responder
 {
-  public respond(
+  public constructor(
+    private advisorBookingRepository  : AdvisorBookingRepository
+  ) {
+
+  }
+
+  public async respond(
     _request  : Request,
     response  : Response<AdvisorBookingResponse>
-  ) : void {
+  ) : Promise<void> {
+    const bookings  = await this.advisorBookingRepository.getAllBookings();
+
     response.send({
-      "bookings"  : [
-        {
-          "advisorId"   : 3456,
-          "date"        : "2021-03-23T11:00:00.000Z",
-          "studentName" : "John Smith"
+      "bookings"  : bookings.map(
+        (
+          booking
+        ) => {
+          return {
+            "advisorId"   : booking.getAdvisorId(),
+            "date"        : booking.getDate().toISOString(),
+            "studentName" : booking.getStudentName()
+          };
         }
-      ]
+      )
     });
   }
 }

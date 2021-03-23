@@ -1,5 +1,9 @@
 import getAllBookingsFactory from "./factory";
 
-const getAllBookings  = getAllBookingsFactory.construct();
+import advisorBookingRepository from "../advisor_booking_repository";
+
+const getAllBookings  = getAllBookingsFactory.construct(
+  advisorBookingRepository
+);
 
 export default getAllBookings;
