@@ -1,20 +1,11 @@
 import advisorServiceFactory from "./factory";
 
-import advisorAvailabilityFactory           from "../advisor_availability/factory";
-import advisorAvailabilityCollectionFactory from "../advisor_availability_collection/factory";
-import advisorAvailabilityRepositoryFactory from "../advisor_availability_repository/factory";
-import advisorBookingRepository             from "../advisor_booking_repository";
-import availabilityFactory                  from "../availability/factory";
-import availabilityCollectionFactory        from "../availability_collection/factory";
+import advisorAvailabilityRepository  from "../advisor_availability_repository";
+import advisorBookingRepository       from "../advisor_booking_repository";
 
 const advisorService  = advisorServiceFactory.construct(
-  advisorAvailabilityCollectionFactory,
-  advisorAvailabilityFactory,
-  advisorAvailabilityRepositoryFactory,
-  advisorBookingRepository,
-  "http://localhost:3000/",
-  availabilityCollectionFactory,
-  availabilityFactory
+  advisorAvailabilityRepository,
+  advisorBookingRepository
 );
 
 export default advisorService;

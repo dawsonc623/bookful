@@ -2,7 +2,7 @@ import AdvisorAvailabilityCollection from "../advisor_availability_collection/in
 
 interface AdvisorAvailabilityRepository
 {
-  getAllAdvisorAvailability()  : AdvisorAvailabilityCollection;
+  getAllAdvisorAvailability() : Promise<AdvisorAvailabilityCollection>;
 }
 
 export default AdvisorAvailabilityRepository;

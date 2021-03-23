@@ -1,11 +1,11 @@
-import AdvisorAvailabilityRepository  from "../advisor_availability_repository/index.type";
+import AdvisorAvailabilityCollection  from "../advisor_availability_collection/index.type";
 import AdvisorBookingCollection       from "../advisor_booking_collection/index.type";
 
 interface AdvisorService
 {
-  getAllAdvisorBookings() : Promise<AdvisorBookingCollection>
+  getAllAdvisorAvailability() : Promise<AdvisorAvailabilityCollection>;
 
-  getAvailabilityForAll() : Promise<AdvisorAvailabilityRepository>;
+  getAllAdvisorBookings() : Promise<AdvisorBookingCollection>
 }
 
 export default AdvisorService;
