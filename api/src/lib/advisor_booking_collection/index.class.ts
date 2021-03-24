@@ -10,6 +10,10 @@ class StandardAdvisorBookingRepository implements AdvisorBookingRepository
 
   }
 
+  public getCount()  : number {
+    return this.advisorBookings.length;
+  }
+
   public add(
     booking : AdvisorBooking
   ) : void {

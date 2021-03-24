@@ -2,6 +2,9 @@ import AdvisorAvailability from "../advisor_availability/index.type";
 
 interface AdvisorAvailabilityCollection
 {
+  // TODO Test for these
+  getCount()  : number;
+
   map<T>(
     mapper  : (
       advisorAvailability : AdvisorAvailability

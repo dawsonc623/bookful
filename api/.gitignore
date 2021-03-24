@@ -1,6 +1,9 @@
 # Generated Code
 dist
 
+# Code coverage reports
+coverage
+
 # Packages
 node_modules
 

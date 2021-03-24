@@ -23,29 +23,34 @@ class GetAllAdvisorAvailability implements Responder
     _request  : Request,
     response  : Response<AdvisorAvailabilityResponse>
   ) : Promise<void> {
-    const advisorAvailabilities = await this.advisorAvailabilityRepository.getAllAdvisorAvailability();
+    try {
+      const advisorAvailabilities = await this.advisorAvailabilityRepository.getAllAdvisorAvailability();
 
-    response.send({
-      "advisorAvailabilities" : advisorAvailabilities.map(
-        (
-          advisorAvailability
-        ) => {
-          return {
-            "advisorId" : advisorAvailability.getAdvisorId(),
+      response.send({
+        "advisorAvailabilities" : advisorAvailabilities.map(
+          (
+            advisorAvailability
+          ) => {
+            return {
+              "advisorId" : advisorAvailability.getAdvisorId(),
 
-            "availabilities"  : advisorAvailability.getAllAvailability().map(
-              (
-                availability
-              ) => {
-                return {
-                  "date"  : availability.getDate().toISOString()
-                };
-              }
-            )
-          };
-        }
-      )
-    });
+              "availabilities"  : advisorAvailability.getAllAvailability().map(
+                (
+                  availability
+                ) => {
+                  return {
+                    "date"  : availability.getDate().toISOString()
+                  };
+                }
+              )
+            };
+          }
+        )
+      });
+    } catch {
+      response.status(500);
+      response.send();
+    }
   }
 }
 

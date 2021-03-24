@@ -8,7 +8,7 @@ interface Responder
   respond(
     request   : Request,
     response  : Response
-  ) : void;
+  ) : Promise<void>;
 }
 
 export default Responder;

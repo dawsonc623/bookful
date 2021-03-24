@@ -23,21 +23,26 @@ class GetAllBookings implements Responder
     _request  : Request,
     response  : Response<AdvisorBookingResponse>
   ) : Promise<void> {
-    const bookings  = await this.advisorBookingRepository.getAllBookings();
+    try {
+      const bookings  = await this.advisorBookingRepository.getAllBookings();
 
-    response.send({
-      "bookings"  : bookings.map(
-        (
-          booking
-        ) => {
-          return {
-            "advisorId"   : booking.getAdvisorId(),
-            "date"        : booking.getDate().toISOString(),
-            "studentName" : booking.getStudentName()
-          };
-        }
-      )
-    });
+      response.send({
+        "bookings"  : bookings.map(
+          (
+            booking
+          ) => {
+            return {
+              "advisorId"   : booking.getAdvisorId(),
+              "date"        : booking.getDate().toISOString(),
+              "studentName" : booking.getStudentName()
+            };
+          }
+        )
+      });
+    } catch {
+      response.status(500);
+      response.send();
+    }
   }
 }
 
