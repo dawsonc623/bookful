@@ -9,6 +9,10 @@ class StandardAdvisorAvailabilityCollection implements AdvisorAvailabilityCollec
 
   }
 
+  public getCount() : number {
+    return this.advisorAvailabilities.length;
+  }
+
   public map<T>(
     mapper  : (
       advisorAvailability : AdvisorAvailability

@@ -4,12 +4,14 @@ import React, {
 
 import ReactDOM from "react-dom";
 
+import "./index.scss";
+
 import {
-  BookAdvisorView
-} from "./views/book_advisor";
+  Shell
+} from "./shell";
 
 function Bookful()  : ReactElement {
-  return <BookAdvisorView />;
+  return <Shell />;
 }
 
 ReactDOM.render(

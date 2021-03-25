@@ -1,0 +1,21 @@
+div.bookAdvisorView
+{
+  div.bookingsSection
+  {
+    display         : flex;
+    flex-direction  : column;
+    flex            : 1;
+    overflow        : hidden;
+
+    div.title
+    {
+      margin : 16px 0 8px 0;
+    }
+
+    .bookingsTable
+    {
+      overflow  : auto;
+      width     : 100%;
+    }
+  }
+}

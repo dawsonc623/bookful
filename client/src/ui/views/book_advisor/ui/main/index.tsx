@@ -6,11 +6,20 @@ import React, {
   useState
 } from "react";
 
+import {
+  Typography
+} from "@rmwc/typography";
+
 import AdvisorAvailabilityCollection  from "../../../../../lib/advisor_availability_collection/index.type";
 import AdvisorBookingCollection       from "../../../../../lib/advisor_booking_collection/index.type";
 import AdvisorService                 from "../../../../../lib/advisor_service/index.type";
 
+import {
+  BookingsSection
+} from "../../components/bookings_section";
+
 import "./index.scss";
+import { BookingForm } from "../../components/booking_form";
 
 interface BookAdvisorViewMainProps
 {
@@ -34,8 +43,9 @@ export default function BookAdvisorViewMain(
   );
 
   // Grab and format the current date to show to the student
+  // Using Date.now() makes this easier to test
 
-  const currentDate       = new Date();
+  const currentDate       = new Date(Date.now());
   const currentDateString = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
 
   // Fetch the advisor availability data
@@ -43,7 +53,7 @@ export default function BookAdvisorViewMain(
   const [
     advisorAvailability,
     setAdvisorAvailability
-  ] = useState<AdvisorAvailabilityCollection>();
+  ] = useState<AdvisorAvailabilityCollection | null>(null);
 
   useEffect(
     () => {
@@ -76,7 +86,7 @@ export default function BookAdvisorViewMain(
   const [
     advisorBookings,
     setAdvisorBookings
-  ] = useState<AdvisorBookingCollection>();
+  ] = useState<AdvisorBookingCollection | null>(null);
 
   useEffect(
     () => {
@@ -104,180 +114,55 @@ export default function BookAdvisorViewMain(
     ]
   );
 
-  // Manage the student name for a new booking
+  // Create a new booking
 
-  const [
-    bookingStudentName,
-    setBookingStudentName
-  ] = useState("");
+  const bookAdvisor = useCallback(
+    async (
+      advisorId   : number,
+      date        : Date,
+      studentName : string
+    ) => {
+      try {
+        await advisorService.bookAdvisor(
+          advisorId,
+          date,
+          studentName
+        );
 
-  const updateBookingStudentName  = useCallback(
-    (
-      event : React.ChangeEvent<HTMLInputElement>
-    ) =>
-    {
-      setBookingStudentName(
-        event.target.value
-      );
+        setRefresh(
+          (r) => !r
+        );
+      } catch (e) {
+        // TODO Alert the user of error
+        e;
+      }
     },
     []
   );
-
-  // Create a new booking
-
-  const bookAdvisor = async (
-    advisorId : number,
-    date      : Date
-  ) => {
-    try {
-      await advisorService.bookAdvisor(
-        advisorId,
-        date,
-        bookingStudentName
-      );
-
-      setRefresh(
-        (r) => !r
-      );
-    } catch (e) {
-      // TODO Alert the user of error
-      e;
-    }
-  };
 
   return (
     <div
       className = "bookAdvisorView"
     >
-      <h1>Book Time with an Advisor</h1>
       <div>
+        <div
+          className = "title"
+        >
+          <Typography
+            use = "headline3"
+          >
+            Book Time with an Advisor
+          </Typography>
+        </div>
         <span>Today is {currentDateString}</span>
       </div>
-      <hr />
-      <input
-        onChange    = {updateBookingStudentName}
-        placeholder = "Your Name"
-        type        = "text"
-        value       = {bookingStudentName}
+      <BookingForm
+        advisorAvailability = {advisorAvailability}
+        bookAdvisor         = {bookAdvisor}
       />
-      <hr />
-      {
-        !advisorAvailability ?
-          <p>Loading...</p>
-          :
-          <table>
-            <thead>
-              <tr>
-                <th>Advisor ID</th>
-                <th>Availabilities</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                advisorAvailability.map(
-                  (
-                    advisorAvailability
-                  ) => {
-                    const advisorId = advisorAvailability.getAdvisorId();
-                    const availabilities  = advisorAvailability.getAllAvailability();
-
-                    return (
-                      <React.Fragment
-                        key = {advisorId}
-                      >
-                        <tr>
-                          <td
-                            rowSpan = {availabilities.getCount() + 1}
-                          >
-                            {advisorId}
-                          </td>
-                        </tr>
-                        {
-                          availabilities.map(
-                            (
-                              availability
-                            ) => {
-                              const date    = availability.getDate();
-                              const hours   = date.getHours();
-                              const minutes = date.getMinutes();
-
-                              const period  = hours > 11 ? "PM" : "AM";
-
-                              const dateString  = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ` +
-                                `${(hours % 12 || 12)}:${minutes > 9 ? minutes : `0${minutes}`} ${period}`;
-
-                              return (
-                                <tr
-                                  key = {dateString}
-                                >
-                                  <td>{dateString}</td>
-                                  <td>
-                                    <button
-                                      onClick = {() => bookAdvisor(advisorId, date)}
-                                    >
-                                      Book
-                                    </button>
-                                  </td>
-                                </tr>
-                              );
-                            }
-                          )
-                        }
-                      </React.Fragment>
-                    );
-                  }
-                )
-              }
-            </tbody>
-          </table>
-      }
-      <h2>Booked Times</h2>
-      <hr />
-      {
-        !advisorBookings ?
-          <p>Loading...</p>
-          :
-          <table>
-            <thead>
-              <tr>
-                <th>Advisor ID</th>
-                <th>Student Name</th>
-                <th>Date/Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                advisorBookings.map(
-                  (
-                    booking
-                  ) => {
-                    const advisorId = booking.getAdvisorId();
-
-                    const date    = booking.getDate();
-                    const hours   = date.getHours();
-                    const minutes = date.getMinutes();
-
-                    const period  = hours > 11 ? "PM" : "AM";
-
-                    const dateString  = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ` +
-                      `${(hours % 12 || 12)}:${minutes > 9 ? minutes : `0${minutes}`} ${period}`;
-
-                    return (
-                      <tr
-                        key = {`${advisorId}@${dateString}`}
-                      >
-                        <td>{advisorId}</td>
-                        <td>{booking.getStudentName()}</td>
-                        <td>{dateString}</td>
-                      </tr>
-                    );
-                  }
-                )
-              }
-            </tbody>
-          </table>
-      }
+      <BookingsSection
+        advisorBookings = {advisorBookings}
+      />
     </div>
   );
 }

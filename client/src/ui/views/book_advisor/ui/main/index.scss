@@ -1,4 +1,21 @@
 div.bookAdvisorView
 {
-  color: white;
+  color           : white;
+  display         : flex;
+  flex            : 1;
+  flex-direction  : column;
+  margin          : 0 auto;
+  max-width       : 1024px;
+  overflow        : hidden;
+  width           : 100%;
+
+  div.title
+  {
+    margin  : 16px 0;
+  }
+
+  .tableColumnConstrained
+  {
+    width : 30%;
+  }
 }

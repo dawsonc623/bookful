@@ -9,16 +9,24 @@
   "private": true,
   "scripts": {
     "build:prod": "parcel build src/ui/index.html -d dist_prod",
-    "dev": "parcel -p 8080 src/ui/index.html"
+    "dev": "parcel -p 8080 src/ui/index.html",
+    "lint": "eslint src"
   },
   "dependencies": {
     "@bookful/data": "^0.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "@rmwc/data-table": "^6.1.4",
+    "@rmwc/linear-progress": "^6.1.4",
+    "@rmwc/list": "^6.1.4",
+    "@rmwc/textfield": "^6.1.4",
+    "@rmwc/theme": "^6.1.4",
+    "@rmwc/top-app-bar": "^6.1.4",
+    "@rmwc/typography": "^6.1.4",
+    "react": "^16.3.x",
+    "react-dom": "^16.3.x"
   },
   "devDependencies": {
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.2",
+    "@types/react": "^16.14.5",
+    "@types/react-dom": "^16.9.12",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "eslint": "^7.22.0",

@@ -1,0 +1,22 @@
+div.bookAdvisorView
+{
+  div.bookingForm
+  {
+    display         : flex;
+    flex-direction  : column;
+    flex            : 1;
+    overflow        : hidden;
+
+    .availabilityTable
+    {
+      overflow  : auto;
+      width     : 100%;
+
+      .advisorId
+      {
+        padding-top     : 16px;
+        vertical-align  : top;
+      }
+    }
+  }
+}

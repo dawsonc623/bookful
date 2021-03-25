@@ -1,4 +1,46 @@
+$mdc-theme-primary: #666;
+$mdc-theme-secondary: #333;
+
+// Theme
+@import "@material/theme/dist/mdc.theme.css";
+@import "@rmwc/theme/theme.css";
+
+// Data Table
+@import "@material/data-table/dist/mdc.data-table.css";
+@import "@rmwc/data-table/data-table.css";
+
+// Icon
+@import "@rmwc/icon/icon.css";
+
+// Linear Progress
+@import "@material/linear-progress/dist/mdc.linear-progress.css";
+
+// List
+@import "@material/list/dist/mdc.list.css";
+
+// Ripple
+@import "@material/ripple/dist/mdc.ripple.css";
+
+// Textfield
+
+@import "@material/textfield/dist/mdc.textfield.css";
+@import "@material/floating-label/dist/mdc.floating-label.css";
+@import "@material/notched-outline/dist/mdc.notched-outline.css";
+@import "@material/line-ripple/dist/mdc.line-ripple.css";
+
+// Top App Bar
+@import "@material/top-app-bar/dist/mdc.top-app-bar.css";
+@import "@material/icon-button/dist/mdc.icon-button.css";
+
+// Typography
+@import "@material/typography/dist/mdc.typography.css";
+
+html, body, div#app {
+  height: 100%;
+}
+
 body
 {
-  background-color: #666;
+  background-color  : $mdc-theme-secondary;
+  margin            : 0;
 }
