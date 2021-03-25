@@ -26,7 +26,7 @@ import "./index.scss";
 
 interface BookingsSectionMainProps
 {
-  advisorBookings : AdvisorBookingCollection | null;
+  advisorBookings : AdvisorBookingCollection | null | undefined;
 }
 
 export default function BookingsSectionMain(
@@ -51,7 +51,7 @@ export default function BookingsSectionMain(
         </Typography>
       </div>
       {
-        !advisorBookings ?
+        advisorBookings === undefined ?
           <LinearProgress />
           :
           <>
@@ -82,7 +82,7 @@ export default function BookingsSectionMain(
                 </DataTableHead>
                 <DataTableBody>
                   {
-                    advisorBookings.getCount() > 0 ?
+                    advisorBookings?.getCount() > 0 ?
                       advisorBookings.map(
                         (
                           booking
@@ -110,9 +110,11 @@ export default function BookingsSectionMain(
                         }
                       )
                       :
-                                      <ListItemGraphic
-                                        icon  = "calendar_today"
-                                      />
+                      <DataTableRow>
+                        <DataTableCell></DataTableCell>
+                        <DataTableCell>No Bookings</DataTableCell>
+                        <DataTableCell></DataTableCell>
+                      </DataTableRow>
                   }
                 </DataTableBody>
               </DataTableContent>

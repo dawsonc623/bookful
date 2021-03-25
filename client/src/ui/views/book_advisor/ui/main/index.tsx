@@ -7,6 +7,14 @@ import React, {
 } from "react";
 
 import {
+  Dialog,
+  DialogActions,
+  DialogButton,
+  DialogContent,
+  DialogTitle
+} from "@rmwc/dialog";
+
+import {
   Typography
 } from "@rmwc/typography";
 
@@ -15,11 +23,14 @@ import AdvisorBookingCollection       from "../../../../../lib/advisor_booking_c
 import AdvisorService                 from "../../../../../lib/advisor_service/index.type";
 
 import {
+  BookingForm
+} from "../../components/booking_form";
+
+import {
   BookingsSection
 } from "../../components/bookings_section";
 
 import "./index.scss";
-import { BookingForm } from "../../components/booking_form";
 
 interface BookAdvisorViewMainProps
 {
@@ -48,12 +59,36 @@ export default function BookAdvisorViewMain(
   const currentDate       = new Date(Date.now());
   const currentDateString = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
 
+  // Error messaging
+  const [
+    errors,
+    setErrors
+  ] = useState<string[]>(
+    []
+  );
+
+  const addError  = (
+    error : string
+  ) => {
+    errors.push(error);
+    setErrors([...errors]);
+  };
+
+  const clearErrors = useCallback(
+    () => {
+      setErrors(
+        []
+      );
+    },
+    []
+  );
+
   // Fetch the advisor availability data
 
   const [
     advisorAvailability,
     setAdvisorAvailability
-  ] = useState<AdvisorAvailabilityCollection | null>(null);
+  ] = useState<AdvisorAvailabilityCollection | null>();
 
   useEffect(
     () => {
@@ -68,6 +103,15 @@ export default function BookAdvisorViewMain(
               newAdvisorAvailability
             );
           }
+        },
+        () => {
+          setAdvisorAvailability(
+            null
+          );
+
+          addError(
+            "Could not load advisor availability!"
+          );
         }
       );
 
@@ -86,7 +130,7 @@ export default function BookAdvisorViewMain(
   const [
     advisorBookings,
     setAdvisorBookings
-  ] = useState<AdvisorBookingCollection | null>(null);
+  ] = useState<AdvisorBookingCollection | null>();
 
   useEffect(
     () => {
@@ -101,6 +145,15 @@ export default function BookAdvisorViewMain(
               newAdvisorBookings
             );
           }
+        },
+        () => {
+          setAdvisorBookings(
+            null
+          );
+
+          addError(
+            "Could not load advisor bookings!"
+          );
         }
       );
 
@@ -132,9 +185,10 @@ export default function BookAdvisorViewMain(
         setRefresh(
           (r) => !r
         );
-      } catch (e) {
-        // TODO Alert the user of error
-        e;
+      } catch (error) {
+        addError(
+          "Could not book advisor!"
+        );
       }
     },
     []
@@ -163,6 +217,37 @@ export default function BookAdvisorViewMain(
       <BookingsSection
         advisorBookings = {advisorBookings}
       />
+      <Dialog
+        open    = {errors.length > 0}
+        onClose = {clearErrors}
+      >
+        <DialogTitle>An Error Occurred</DialogTitle>
+        <DialogContent>
+          {
+            errors.map(
+              (
+                error,
+                index
+              ) => {
+                return (
+                  <React.Fragment
+                    key = {`${error}${index}`}
+                  >
+                    {error}<br />
+                  </React.Fragment>
+                );
+              }
+            )
+          }
+        </DialogContent>
+        <DialogActions>
+          <DialogButton
+            action = "close"
+          >
+            OK
+          </DialogButton>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

@@ -36,7 +36,7 @@ import "./index.scss";
 
 interface BookingFormMainProps
 {
-  advisorAvailability : AdvisorAvailabilityCollection | null;
+  advisorAvailability : AdvisorAvailabilityCollection | null | undefined;
 
   bookAdvisor : (
     advisorId   : number,
@@ -83,7 +83,6 @@ export default function BookingFormMain(
   const showErrorIfDisabled = useCallback(
     () =>
     {
-      console.log("here");
       setShowNameMissingError(
         bookingStudentName === ""
       );
@@ -104,7 +103,7 @@ export default function BookingFormMain(
   );
 
   return (
-    !advisorAvailability ?
+    advisorAvailability === undefined ?
       <LinearProgress />
       :
       <div
@@ -112,15 +111,20 @@ export default function BookingFormMain(
       >
         <div>
           <hr />
-          <TextField
-            required
+          {
+            advisorAvailability?.getCount() > 0 &&
+            <>
+              <TextField
+                required
 
-            invalid   = {showNameMissingError}
-            label     = "Your Name"
-            onChange  = {updateBookingStudentName}
-            value     = {bookingStudentName}
-          />
-          <hr />
+                invalid   = {showNameMissingError}
+                label     = "Your Name"
+                onChange  = {updateBookingStudentName}
+                value     = {bookingStudentName}
+              />
+              <hr />
+            </>
+          }
         </div>
         <DataTable
           className   = "availabilityTable"
@@ -146,7 +150,7 @@ export default function BookingFormMain(
             </DataTableHead>
             <DataTableBody>
               {
-                advisorAvailability.getCount() > 0 ?
+                advisorAvailability?.getCount() > 0 ?
                   advisorAvailability.map(
                     (
                       advisorAvailability
