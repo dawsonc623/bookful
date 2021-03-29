@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shell Renders Shell without error 1`] = `
+<DocumentFragment>
+  <div
+    class="shell"
+    style="--mdc-theme-on-primary: rgba(255, 255, 255, 1); --mdc-theme-on-secondary: rgba(255, 255, 255, 1); --mdc-theme-primary: #666; --mdc-theme-secondary: #333;"
+  >
+    <header
+      class="mdc-top-app-bar"
+    >
+      <div
+        class="mdc-top-app-bar__row"
+      >
+        <section
+          class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+        >
+          <div
+            class="mdc-top-app-bar__title"
+          >
+            Bookful
+          </div>
+        </section>
+      </div>
+    </header>
+    <div
+      class="mdc-top-app-bar--fixed-adjust"
+    />
+    <div
+      class="bookAdvisorView"
+    >
+      <div>
+        <div
+          class="title"
+        >
+          <span
+            class="mdc-typography--headline3"
+          >
+            Book Time with an Advisor
+          </span>
+        </div>
+        <span>
+          Today is 3/26/2021
+        </span>
+      </div>
+      <nav
+        aria-label="Progress Bar"
+        aria-valuemax="1"
+        aria-valuemin="0"
+        class="mdc-linear-progress mdc-linear-progress--indeterminate"
+        role="progressbar"
+      >
+        <div
+          class="mdc-linear-progress__buffering-dots"
+        />
+        <div
+          class="mdc-linear-progress__buffer"
+          style="transform: scaleX(1);"
+        />
+        <div
+          class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+          style="transform: scaleX(1);"
+        >
+          <div
+            class="mdc-linear-progress__bar-inner"
+          />
+        </div>
+        <div
+          class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+        >
+          <div
+            class="mdc-linear-progress__bar-inner"
+          />
+        </div>
+      </nav>
+      <div
+        class="bookingsSection"
+      >
+        <div
+          class="title"
+        >
+          <span
+            class="mdc-typography--headline5"
+          >
+            Booked Times
+          </span>
+        </div>
+        <nav
+          aria-label="Progress Bar"
+          aria-valuemax="1"
+          aria-valuemin="0"
+          class="mdc-linear-progress mdc-linear-progress--indeterminate"
+          role="progressbar"
+        >
+          <div
+            class="mdc-linear-progress__buffering-dots"
+          />
+          <div
+            class="mdc-linear-progress__buffer"
+            style="transform: scaleX(1);"
+          />
+          <div
+            class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+            style="transform: scaleX(1);"
+          >
+            <div
+              class="mdc-linear-progress__bar-inner"
+            />
+          </div>
+          <div
+            class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+          >
+            <div
+              class="mdc-linear-progress__bar-inner"
+            />
+          </div>
+        </nav>
+      </div>
+      <div
+        class="mdc-dialog"
+      >
+        <div
+          class="mdc-dialog__container"
+        >
+          <div
+            aria-modal="true"
+            class="mdc-dialog__surface"
+            role="alertdialog"
+          >
+            <h2
+              class="mdc-dialog__title"
+            >
+              An Error Occurred
+            </h2>
+            <div
+              class="mdc-dialog__content"
+            />
+            <div
+              class="mdc-dialog__actions"
+            >
+              <button
+                class="mdc-dialog__button mdc-button"
+                data-mdc-dialog-action="close"
+              >
+                <div
+                  class="mdc-button__ripple"
+                />
+                <span
+                  class="mdc-button__label"
+                >
+                  OK
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mdc-dialog__scrim"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

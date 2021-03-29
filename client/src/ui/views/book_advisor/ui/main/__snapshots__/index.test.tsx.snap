@@ -1,0 +1,1464 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookAdvisorViewMain Initial rendering Renders without error when availability loads but bookings are in progress 1`] = `
+<DocumentFragment>
+  <div
+    class="bookAdvisorView"
+  >
+    <div>
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline3"
+        >
+          Book Time with an Advisor
+        </span>
+      </div>
+      <span>
+        Today is 3/28/2021
+      </span>
+    </div>
+    <div
+      class="bookingForm"
+    >
+      <div>
+        <hr />
+      </div>
+      <div
+        class="availabilityTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Availabilities
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              />
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                No Availability
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="bookingsSection"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline5"
+        >
+          Booked Times
+        </span>
+      </div>
+      <nav
+        aria-label="Progress Bar"
+        aria-valuemax="1"
+        aria-valuemin="0"
+        class="mdc-linear-progress mdc-linear-progress--indeterminate"
+        role="progressbar"
+      >
+        <div
+          class="mdc-linear-progress__buffering-dots"
+        />
+        <div
+          class="mdc-linear-progress__buffer"
+          style="transform: scaleX(1);"
+        />
+        <div
+          class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+          style="transform: scaleX(1);"
+        >
+          <div
+            class="mdc-linear-progress__bar-inner"
+          />
+        </div>
+        <div
+          class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+        >
+          <div
+            class="mdc-linear-progress__bar-inner"
+          />
+        </div>
+      </nav>
+    </div>
+    <div
+      class="mdc-dialog"
+    >
+      <div
+        class="mdc-dialog__container"
+      >
+        <div
+          aria-modal="true"
+          class="mdc-dialog__surface"
+          role="alertdialog"
+        >
+          <h2
+            class="mdc-dialog__title"
+          >
+            An Error Occurred
+          </h2>
+          <div
+            class="mdc-dialog__content"
+          />
+          <div
+            class="mdc-dialog__actions"
+          >
+            <button
+              class="mdc-dialog__button mdc-button"
+              data-mdc-dialog-action="close"
+            >
+              <div
+                class="mdc-button__ripple"
+              />
+              <span
+                class="mdc-button__label"
+              >
+                OK
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mdc-dialog__scrim"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BookAdvisorViewMain Initial rendering Renders without error when bookings load but availability is in progress 1`] = `
+<DocumentFragment>
+  <div
+    class="bookAdvisorView"
+  >
+    <div>
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline3"
+        >
+          Book Time with an Advisor
+        </span>
+      </div>
+      <span>
+        Today is 3/28/2021
+      </span>
+    </div>
+    <nav
+      aria-label="Progress Bar"
+      aria-valuemax="1"
+      aria-valuemin="0"
+      class="mdc-linear-progress mdc-linear-progress--indeterminate"
+      role="progressbar"
+    >
+      <div
+        class="mdc-linear-progress__buffering-dots"
+      />
+      <div
+        class="mdc-linear-progress__buffer"
+        style="transform: scaleX(1);"
+      />
+      <div
+        class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+        style="transform: scaleX(1);"
+      >
+        <div
+          class="mdc-linear-progress__bar-inner"
+        />
+      </div>
+      <div
+        class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+      >
+        <div
+          class="mdc-linear-progress__bar-inner"
+        />
+      </div>
+    </nav>
+    <div
+      class="bookingsSection"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline5"
+        >
+          Booked Times
+        </span>
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div
+        class="bookingsTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Student Name
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Date/Time
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                No Bookings
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="mdc-dialog"
+    >
+      <div
+        class="mdc-dialog__container"
+      >
+        <div
+          aria-modal="true"
+          class="mdc-dialog__surface"
+          role="alertdialog"
+        >
+          <h2
+            class="mdc-dialog__title"
+          >
+            An Error Occurred
+          </h2>
+          <div
+            class="mdc-dialog__content"
+          />
+          <div
+            class="mdc-dialog__actions"
+          >
+            <button
+              class="mdc-dialog__button mdc-button"
+              data-mdc-dialog-action="close"
+            >
+              <div
+                class="mdc-button__ripple"
+              />
+              <span
+                class="mdc-button__label"
+              >
+                OK
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mdc-dialog__scrim"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BookAdvisorViewMain Initial rendering Renders without error when requests are finished 1`] = `
+<DocumentFragment>
+  <div
+    class="bookAdvisorView"
+  >
+    <div>
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline3"
+        >
+          Book Time with an Advisor
+        </span>
+      </div>
+      <span>
+        Today is 3/28/2021
+      </span>
+    </div>
+    <div
+      class="bookingForm"
+    >
+      <div>
+        <hr />
+      </div>
+      <div
+        class="availabilityTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Availabilities
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              />
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                No Availability
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="bookingsSection"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline5"
+        >
+          Booked Times
+        </span>
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div
+        class="bookingsTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Student Name
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Date/Time
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                No Bookings
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="mdc-dialog"
+    >
+      <div
+        class="mdc-dialog__container"
+      >
+        <div
+          aria-modal="true"
+          class="mdc-dialog__surface"
+          role="alertdialog"
+        >
+          <h2
+            class="mdc-dialog__title"
+          >
+            An Error Occurred
+          </h2>
+          <div
+            class="mdc-dialog__content"
+          />
+          <div
+            class="mdc-dialog__actions"
+          >
+            <button
+              class="mdc-dialog__button mdc-button"
+              data-mdc-dialog-action="close"
+            >
+              <div
+                class="mdc-button__ripple"
+              />
+              <span
+                class="mdc-button__label"
+              >
+                OK
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mdc-dialog__scrim"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BookAdvisorViewMain Initial rendering Renders without error while requests are in progress 1`] = `
+<DocumentFragment>
+  <div
+    class="bookAdvisorView"
+  >
+    <div>
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline3"
+        >
+          Book Time with an Advisor
+        </span>
+      </div>
+      <span>
+        Today is 3/28/2021
+      </span>
+    </div>
+    <nav
+      aria-label="Progress Bar"
+      aria-valuemax="1"
+      aria-valuemin="0"
+      class="mdc-linear-progress mdc-linear-progress--indeterminate"
+      role="progressbar"
+    >
+      <div
+        class="mdc-linear-progress__buffering-dots"
+      />
+      <div
+        class="mdc-linear-progress__buffer"
+        style="transform: scaleX(1);"
+      />
+      <div
+        class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+        style="transform: scaleX(1);"
+      >
+        <div
+          class="mdc-linear-progress__bar-inner"
+        />
+      </div>
+      <div
+        class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+      >
+        <div
+          class="mdc-linear-progress__bar-inner"
+        />
+      </div>
+    </nav>
+    <div
+      class="bookingsSection"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline5"
+        >
+          Booked Times
+        </span>
+      </div>
+      <nav
+        aria-label="Progress Bar"
+        aria-valuemax="1"
+        aria-valuemin="0"
+        class="mdc-linear-progress mdc-linear-progress--indeterminate"
+        role="progressbar"
+      >
+        <div
+          class="mdc-linear-progress__buffering-dots"
+        />
+        <div
+          class="mdc-linear-progress__buffer"
+          style="transform: scaleX(1);"
+        />
+        <div
+          class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+          style="transform: scaleX(1);"
+        >
+          <div
+            class="mdc-linear-progress__bar-inner"
+          />
+        </div>
+        <div
+          class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+        >
+          <div
+            class="mdc-linear-progress__bar-inner"
+          />
+        </div>
+      </nav>
+    </div>
+    <div
+      class="mdc-dialog"
+    >
+      <div
+        class="mdc-dialog__container"
+      >
+        <div
+          aria-modal="true"
+          class="mdc-dialog__surface"
+          role="alertdialog"
+        >
+          <h2
+            class="mdc-dialog__title"
+          >
+            An Error Occurred
+          </h2>
+          <div
+            class="mdc-dialog__content"
+          />
+          <div
+            class="mdc-dialog__actions"
+          >
+            <button
+              class="mdc-dialog__button mdc-button"
+              data-mdc-dialog-action="close"
+            >
+              <div
+                class="mdc-button__ripple"
+              />
+              <span
+                class="mdc-button__label"
+              >
+                OK
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mdc-dialog__scrim"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BookAdvisorViewMain When an availability is clicked Shows an error when a failure during booking occurs 1`] = `
+<DocumentFragment>
+  <div
+    class="bookAdvisorView"
+  >
+    <div>
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline3"
+        >
+          Book Time with an Advisor
+        </span>
+      </div>
+      <span>
+        Today is 3/28/2021
+      </span>
+    </div>
+    <div
+      class="bookingForm"
+    >
+      <div>
+        <hr />
+        <label
+          aria-labelledby="textfield-Your Name-label"
+          class="mdc-text-field mdc-text-field--upgraded"
+        >
+          <span
+            class="mdc-text-field__ripple"
+          />
+          <input
+            class="mdc-text-field__input"
+            required=""
+            value="Phil"
+          />
+          <span
+            class="mdc-floating-label mdc-floating-label--float-above"
+            id="textfield-Your Name-label"
+          >
+            Your Name
+          </span>
+          <span
+            class="mdc-line-ripple mdc-line-ripple--deactivating"
+            style="transform-origin: 0px center;"
+          />
+        </label>
+        <hr />
+      </div>
+      <div
+        class="availabilityTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Availabilities
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              />
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="advisorId mdc-data-table__cell rmwc-data-table__cell"
+              >
+                12321
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                <ul
+                  class="mdc-list mdc-list--dense"
+                >
+                  <li
+                    class="mdc-list-item"
+                    tabindex="0"
+                  >
+                    <span
+                      class="mdc-list-item__text"
+                    >
+                      12/20/2012 12:20 AM
+                    </span>
+                    <i
+                      aria-hidden="true"
+                      class="rmwc-icon rmwc-icon--ligature material-icons mdc-list-item__meta"
+                    >
+                      calendar_today
+                    </i>
+                  </li>
+                </ul>
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="bookingsSection"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline5"
+        >
+          Booked Times
+        </span>
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div
+        class="bookingsTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Student Name
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Date/Time
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                No Bookings
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="mdc-dialog mdc-dialog--opening"
+    >
+      <div
+        class="mdc-dialog__container"
+      >
+        <div
+          aria-modal="true"
+          class="mdc-dialog__surface"
+          role="alertdialog"
+        >
+          <h2
+            class="mdc-dialog__title"
+          >
+            An Error Occurred
+          </h2>
+          <div
+            class="mdc-dialog__content"
+          >
+            Could not book advisor!
+            <br />
+          </div>
+          <div
+            class="mdc-dialog__actions"
+          >
+            <button
+              class="mdc-dialog__button mdc-button"
+              data-mdc-dialog-action="close"
+            >
+              <div
+                class="mdc-button__ripple"
+              />
+              <span
+                class="mdc-button__label"
+              >
+                OK
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mdc-dialog__scrim"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BookAdvisorViewMain When requests fail Renders an alert message when both requests fail 1`] = `
+<DocumentFragment>
+  <div
+    class="bookAdvisorView"
+  >
+    <div>
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline3"
+        >
+          Book Time with an Advisor
+        </span>
+      </div>
+      <span>
+        Today is 3/28/2021
+      </span>
+    </div>
+    <div
+      class="bookingForm"
+    >
+      <div>
+        <hr />
+      </div>
+      <div
+        class="availabilityTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Availabilities
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              />
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                No Availability
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="bookingsSection"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline5"
+        >
+          Booked Times
+        </span>
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div
+        class="bookingsTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Student Name
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Date/Time
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                No Bookings
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="mdc-dialog mdc-dialog--opening"
+    >
+      <div
+        class="mdc-dialog__container"
+      >
+        <div
+          aria-modal="true"
+          class="mdc-dialog__surface"
+          role="alertdialog"
+        >
+          <h2
+            class="mdc-dialog__title"
+          >
+            An Error Occurred
+          </h2>
+          <div
+            class="mdc-dialog__content"
+          >
+            Could not load advisor availability!
+            <br />
+            Could not load advisor bookings!
+            <br />
+          </div>
+          <div
+            class="mdc-dialog__actions"
+          >
+            <button
+              class="mdc-dialog__button mdc-button"
+              data-mdc-dialog-action="close"
+            >
+              <div
+                class="mdc-button__ripple"
+              />
+              <span
+                class="mdc-button__label"
+              >
+                OK
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mdc-dialog__scrim"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BookAdvisorViewMain When requests fail Renders an alert message when the advisor availability request fails 1`] = `
+<DocumentFragment>
+  <div
+    class="bookAdvisorView"
+  >
+    <div>
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline3"
+        >
+          Book Time with an Advisor
+        </span>
+      </div>
+      <span>
+        Today is 3/28/2021
+      </span>
+    </div>
+    <div
+      class="bookingForm"
+    >
+      <div>
+        <hr />
+      </div>
+      <div
+        class="availabilityTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Availabilities
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              />
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                No Availability
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="bookingsSection"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline5"
+        >
+          Booked Times
+        </span>
+      </div>
+      <nav
+        aria-label="Progress Bar"
+        aria-valuemax="1"
+        aria-valuemin="0"
+        class="mdc-linear-progress mdc-linear-progress--indeterminate"
+        role="progressbar"
+      >
+        <div
+          class="mdc-linear-progress__buffering-dots"
+        />
+        <div
+          class="mdc-linear-progress__buffer"
+          style="transform: scaleX(1);"
+        />
+        <div
+          class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+          style="transform: scaleX(1);"
+        >
+          <div
+            class="mdc-linear-progress__bar-inner"
+          />
+        </div>
+        <div
+          class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+        >
+          <div
+            class="mdc-linear-progress__bar-inner"
+          />
+        </div>
+      </nav>
+    </div>
+    <div
+      class="mdc-dialog mdc-dialog--opening"
+    >
+      <div
+        class="mdc-dialog__container"
+      >
+        <div
+          aria-modal="true"
+          class="mdc-dialog__surface"
+          role="alertdialog"
+        >
+          <h2
+            class="mdc-dialog__title"
+          >
+            An Error Occurred
+          </h2>
+          <div
+            class="mdc-dialog__content"
+          >
+            Could not load advisor availability!
+            <br />
+          </div>
+          <div
+            class="mdc-dialog__actions"
+          >
+            <button
+              class="mdc-dialog__button mdc-button"
+              data-mdc-dialog-action="close"
+            >
+              <div
+                class="mdc-button__ripple"
+              />
+              <span
+                class="mdc-button__label"
+              >
+                OK
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mdc-dialog__scrim"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BookAdvisorViewMain When requests fail Renders an alert message when the advisor bookings request fails 1`] = `
+<DocumentFragment>
+  <div
+    class="bookAdvisorView"
+  >
+    <div>
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline3"
+        >
+          Book Time with an Advisor
+        </span>
+      </div>
+      <span>
+        Today is 3/28/2021
+      </span>
+    </div>
+    <nav
+      aria-label="Progress Bar"
+      aria-valuemax="1"
+      aria-valuemin="0"
+      class="mdc-linear-progress mdc-linear-progress--indeterminate"
+      role="progressbar"
+    >
+      <div
+        class="mdc-linear-progress__buffering-dots"
+      />
+      <div
+        class="mdc-linear-progress__buffer"
+        style="transform: scaleX(1);"
+      />
+      <div
+        class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+        style="transform: scaleX(1);"
+      >
+        <div
+          class="mdc-linear-progress__bar-inner"
+        />
+      </div>
+      <div
+        class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+      >
+        <div
+          class="mdc-linear-progress__bar-inner"
+        />
+      </div>
+    </nav>
+    <div
+      class="bookingsSection"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="mdc-typography--headline5"
+        >
+          Booked Times
+        </span>
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div
+        class="bookingsTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+      >
+        <table
+          class="mdc-data-table__table"
+        >
+          <thead
+            class="rmwc-data-table__head"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__header-row"
+            >
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Advisor ID
+              </th>
+              <th
+                class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Student Name
+              </th>
+              <th
+                class="rmwc-data-table__cell mdc-data-table__header-cell"
+                role="columnheader"
+                scope="col"
+              >
+                Date/Time
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="mdc-data-table__content"
+          >
+            <tr
+              class="rmwc-data-table__row mdc-data-table__row"
+            >
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              >
+                No Bookings
+              </td>
+              <td
+                class="mdc-data-table__cell rmwc-data-table__cell"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="mdc-dialog mdc-dialog--opening"
+    >
+      <div
+        class="mdc-dialog__container"
+      >
+        <div
+          aria-modal="true"
+          class="mdc-dialog__surface"
+          role="alertdialog"
+        >
+          <h2
+            class="mdc-dialog__title"
+          >
+            An Error Occurred
+          </h2>
+          <div
+            class="mdc-dialog__content"
+          >
+            Could not load advisor bookings!
+            <br />
+          </div>
+          <div
+            class="mdc-dialog__actions"
+          >
+            <button
+              class="mdc-dialog__button mdc-button"
+              data-mdc-dialog-action="close"
+            >
+              <div
+                class="mdc-button__ripple"
+              />
+              <span
+                class="mdc-button__label"
+              >
+                OK
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mdc-dialog__scrim"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

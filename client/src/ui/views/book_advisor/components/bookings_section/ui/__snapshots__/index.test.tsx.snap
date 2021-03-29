@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookingsSection Renders without error 1`] = `
+<DocumentFragment>
+  <div
+    class="bookingsSection"
+  >
+    <div
+      class="title"
+    >
+      <span
+        class="mdc-typography--headline5"
+      >
+        Booked Times
+      </span>
+    </div>
+    <div>
+      <hr />
+    </div>
+    <div
+      class="bookingsTable mdc-data-table rmwc-data-table--sticky-rows rmwc-data-table--sticky-rows-1"
+    >
+      <table
+        class="mdc-data-table__table"
+      >
+        <thead
+          class="rmwc-data-table__head"
+        >
+          <tr
+            class="rmwc-data-table__row mdc-data-table__header-row"
+          >
+            <th
+              class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+              role="columnheader"
+              scope="col"
+            >
+              Advisor ID
+            </th>
+            <th
+              class="tableColumnConstrained rmwc-data-table__cell mdc-data-table__header-cell"
+              role="columnheader"
+              scope="col"
+            >
+              Student Name
+            </th>
+            <th
+              class="rmwc-data-table__cell mdc-data-table__header-cell"
+              role="columnheader"
+              scope="col"
+            >
+              Date/Time
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="mdc-data-table__content"
+        >
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            />
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              No Bookings
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;

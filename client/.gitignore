@@ -1,6 +1,9 @@
 # Packages
 node_modules
 
+# Code coverage reports
+coverage
+
 # Parcel
 .cache
 dist
