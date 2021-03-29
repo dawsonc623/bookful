@@ -105,13 +105,15 @@ export default function BookAdvisorViewMain(
           }
         },
         () => {
-          setAdvisorAvailability(
-            null
-          );
+          if (!unmounted) {
+            setAdvisorAvailability(
+              null
+            );
 
-          addError(
-            "Could not load advisor availability!"
-          );
+            addError(
+              "Could not load advisor availability!"
+            );
+          }
         }
       );
 
@@ -147,13 +149,15 @@ export default function BookAdvisorViewMain(
           }
         },
         () => {
-          setAdvisorBookings(
-            null
-          );
+          if (!unmounted) {
+            setAdvisorBookings(
+              null
+            );
 
-          addError(
-            "Could not load advisor bookings!"
-          );
+            addError(
+              "Could not load advisor bookings!"
+            );
+          }
         }
       );
 
@@ -181,15 +185,17 @@ export default function BookAdvisorViewMain(
           date,
           studentName
         );
-
-        setRefresh(
-          (r) => !r
-        );
       } catch (error) {
         addError(
           "Could not book advisor!"
         );
       }
+
+      // Refresh the view regardless of error - helpful to the user if the availability
+      // changed and caused the booking error.
+      setRefresh(
+        (r) => !r
+      );
     },
     []
   );

@@ -1,3 +1,3 @@
 export {
   default as BookingForm
-} from "./ui/main";
+} from "./ui";

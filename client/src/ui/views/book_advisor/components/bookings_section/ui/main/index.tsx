@@ -21,12 +21,14 @@ import {
 } from "@rmwc/typography";
 
 import AdvisorBookingCollection from "../../../../../../../lib/advisor_booking_collection/index.type";
+import DateFormatter            from "../../../../../../../lib/date_formatter/index.type";
 
 import "./index.scss";
 
 interface BookingsSectionMainProps
 {
   advisorBookings : AdvisorBookingCollection | null | undefined;
+  dateFormatter   : DateFormatter;
 }
 
 export default function BookingsSectionMain(
@@ -34,7 +36,8 @@ export default function BookingsSectionMain(
 ) : ReactElement
 {
   const {
-    advisorBookings
+    advisorBookings,
+    dateFormatter
   } = props;
 
   return (
@@ -82,21 +85,15 @@ export default function BookingsSectionMain(
                 </DataTableHead>
                 <DataTableBody>
                   {
-                    advisorBookings?.getCount() > 0 ?
+                    advisorBookings && advisorBookings.getCount() > 0 ?
                       advisorBookings.map(
                         (
                           booking
                         ) => {
                           const advisorId = booking.getAdvisorId();
 
-                          const date    = booking.getDate();
-                          const hours   = date.getHours();
-                          const minutes = date.getMinutes();
-
-                          const period  = hours > 11 ? "PM" : "AM";
-
-                          const dateString  = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ` +
-                          `${(hours % 12 || 12)}:${minutes > 9 ? minutes : `0${minutes}`} ${period}`;
+                          const date        = booking.getDate();
+                          const dateString  = dateFormatter.humanReadable(date);
 
                           return (
                             <DataTableRow

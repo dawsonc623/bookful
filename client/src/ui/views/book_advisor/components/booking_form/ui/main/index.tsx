@@ -30,13 +30,16 @@ import {
   TextField
 } from "@rmwc/textfield";
 
-import AdvisorAvailabilityCollection from "../../../../../../../lib/advisor_availability_collection/index.type";
+import AdvisorAvailabilityCollection  from "../../../../../../../lib/advisor_availability_collection/index.type";
+import DateFormatter                  from "../../../../../../../lib/date_formatter/index.type";
 
 import "./index.scss";
 
 interface BookingFormMainProps
 {
   advisorAvailability : AdvisorAvailabilityCollection | null | undefined;
+
+  dateFormatter : DateFormatter;
 
   bookAdvisor : (
     advisorId   : number,
@@ -51,7 +54,8 @@ export default function BookingFormMain(
 {
   const {
     advisorAvailability,
-    bookAdvisor
+    bookAdvisor,
+    dateFormatter
   } = props;
 
   // Manage the student name for a new booking
@@ -112,7 +116,7 @@ export default function BookingFormMain(
         <div>
           <hr />
           {
-            advisorAvailability?.getCount() > 0 &&
+            advisorAvailability && advisorAvailability.getCount() > 0 &&
             <>
               <TextField
                 required
@@ -150,7 +154,7 @@ export default function BookingFormMain(
             </DataTableHead>
             <DataTableBody>
               {
-                advisorAvailability?.getCount() > 0 ?
+                advisorAvailability && advisorAvailability.getCount() > 0 ?
                   advisorAvailability.map(
                     (
                       advisorAvailability
@@ -176,14 +180,8 @@ export default function BookingFormMain(
                                   (
                                     availability
                                   ) => {
-                                    const date    = availability.getDate();
-                                    const hours   = date.getHours();
-                                    const minutes = date.getMinutes();
-
-                                    const period  = hours > 11 ? "PM" : "AM";
-
-                                    const dateString  = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ` +
-                                    `${(hours % 12 || 12)}:${minutes > 9 ? minutes : `0${minutes}`} ${period}`;
+                                    const date        = availability.getDate();
+                                    const dateString  = dateFormatter.humanReadable(date);
 
                                     const disabled  = bookingStudentName === "";
                                     let listItemClicked;
