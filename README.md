@@ -4,18 +4,32 @@ An sample app used to book advisors.
 
 ## Usage
 
-To start the API server (`yarn` for the first time):
+To start run `yarn` from the base directory:
+
+```
+yarn
+```
+
+Then, build the `data` definitions:
+
+```
+cd data
+yarn build
+```
+
+To start the API server:
 
 ```
 cd api
-yarn
+yarn build
 yarn serve
 ```
 
-To run a dev server for the client (`yarn` for the first time):
+To run a dev server for the client:
 
 ```
 cd client
-yarn
 yarn dev
 ```
+
+Finally, to try the app navigate to http://localhost:8080/.

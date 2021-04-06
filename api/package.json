@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "build": "tsc",
     "lint": "eslint src",
     "serve": "node dist/index.js",
     "test": "jest --coverage",
